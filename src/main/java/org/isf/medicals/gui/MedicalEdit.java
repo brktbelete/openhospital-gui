@@ -309,7 +309,7 @@ public class MedicalEdit extends JDialog {
 						}
 					} else { // updating
 						try {
-							result = medicalBrowsingManager.updateMedical(newMedical);
+							result = medicalBrowsingManager.updateMedical(newMedical) != null;
 						} catch (OHServiceException e1) {
 							List<OHExceptionMessage> errors = e1.getMessages();
 
@@ -321,7 +321,7 @@ public class MedicalEdit extends JDialog {
 
 										if (ok == JOptionPane.OK_OPTION) {
 											try {
-												result = medicalBrowsingManager.updateMedical(newMedical, true);
+												result = medicalBrowsingManager.updateMedical(newMedical, true) != null;
 											} catch (OHServiceException e2) {
 												OHServiceExceptionUtil.showMessages(e2);
 											}
